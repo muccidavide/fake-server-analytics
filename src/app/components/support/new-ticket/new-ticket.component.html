@@ -1,16 +1,14 @@
-<form>
-  <div style="margin-bottom: 1rem;">
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" />
-  </div>
-  <div style="margin-bottom: 1rem;">
-    <label for="request">Request:</label>
-    <textarea name="request" id="request" cols="3"></textarea>
-  </div>
+<form (ngSubmit)="onSubmit(titleInput.value, textInput.value )" #form>
+  <app-control label="Title">
+    <input type="text" name="title" id="title" #titleInput #input />
+  </app-control>
+  <app-control label="Request">
+    <textarea name="request" id="request" cols="3" #textInput #input></textarea>
+  </app-control>
   <div>
-    <button>
-      <span> Submit </span>
-      <span class="icon"> ⌲ </span>
+    <button type="submit" appButton>
+      Submit 
+      <span ngProjectAs="icon"> ⌲ </span>
     </button>
   </div>
 </form>
