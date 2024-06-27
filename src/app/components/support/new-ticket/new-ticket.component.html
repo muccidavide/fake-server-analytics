@@ -1,14 +1,14 @@
-<form (ngSubmit)="onSubmit(titleInput.value, textInput.value )" #form>
+<form (ngSubmit)="onSubmit()" #form>
   <app-control label="Title">
-    <input type="text" name="title" id="title" #titleInput #input />
+    <input type="text" name="title" id="title" #input  [(ngModel)]="title"/>
   </app-control>
   <app-control label="Request">
-    <textarea name="request" id="request" cols="3" #textInput #input></textarea>
+    <textarea name="request" id="request" cols="3" #input  [(ngModel)]="request" ></textarea>
   </app-control>
   <div>
     <button type="submit" appButton>
       Submit 
-      <span ngProjectAs="icon"> ⌲ </span>
+      <span ngProjectAs="icon"> ⌲ </span> 
     </button>
   </div>
 </form>

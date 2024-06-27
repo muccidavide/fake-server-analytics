@@ -13,10 +13,10 @@ import { TicketComponent } from "./ticket/ticket.component";
 export class SupportComponent {
     tickets: ITicket[] = [];
 
-    onAdd(ticketData: { title: string, text: string }) {
+    onAdd(ticketData: { title: string, request: string }) {
         const ticket: ITicket = {
             title: ticketData.title,
-            request: ticketData.text,
+            request: ticketData.request,
             id: Math.random().toString(),
             status: 'open'
         }
